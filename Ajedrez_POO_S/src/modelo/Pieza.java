@@ -2,7 +2,7 @@ package modelo;
 
 import java.util.ArrayList;
 
-// Clase padre de todas las piezas. Cada pieza hija dice como se mueve.
+// Clase padre y pieza hija dice como se mueve.
 public abstract class Pieza {
 
     private Color color;
@@ -15,16 +15,16 @@ public abstract class Pieza {
         return color;
     }
 
-    // letra con la que se dibuja la pieza en la consola (R, D, T, A, C, P)
+    // dibuja la pieza en la consola (R, D, T, A, C, P)
     public abstract char getLetra();
 
     public abstract String getNombre();
 
-    // casillas a las que la pieza se puede mover 
+    // las casillas de pieza se puede mover
     public abstract ArrayList<Posicion> movimientos(Tablero tablero, Posicion desde);
 
-    // camina en una direccion (df filas y dc columnas por paso) hasta chocar con algo.
-    // La usan la torre, el alfil y la dama.
+    // camina en una direccion hasta chocar con algo.
+    // usan la torre, el alfil y la dama.
     protected void recorrer(Tablero tablero, Posicion desde, int df, int dc, ArrayList<Posicion> lista) {
         Posicion p = desde.sumar(df, dc);
         while (p.esValida()) {
@@ -41,7 +41,7 @@ public abstract class Pieza {
         }
     }
 
-    // da un solo salto de df filas y dc columnas. La usan el rey y el caballo.
+    //  salto de df filas y dc columnas. La usan el rey y el caballo.
     protected void saltar(Tablero tablero, Posicion desde, int df, int dc, ArrayList<Posicion> lista) {
         Posicion p = desde.sumar(df, dc);
         if (p.esValida()) {
