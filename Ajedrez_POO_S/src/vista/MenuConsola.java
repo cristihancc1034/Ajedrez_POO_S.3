@@ -10,12 +10,12 @@ import modelo.Partida;
 import modelo.Pieza;
 import modelo.Posicion;
 
-// Menu y pantalla de juego en la consola
+// Menu e interfas de juego en la consola
 public class MenuConsola {
 
     private Scanner teclado = new Scanner(System.in);
 
-    // muestra el menu principal hasta que el usuario elija salir
+    // muestra el menu principal hasta se elija salir del programa
     public void iniciar() {
         boolean salir = false;
         while (!salir) {
@@ -58,7 +58,7 @@ public class MenuConsola {
         System.out.println("  salir      vuelve al menu (se pierde la partida)");
     }
 
-    // pide los nombres, crea la partida y empieza a jugar
+    // pide los nombres y crea la partida
     private void nuevaPartida() {
         System.out.println();
         System.out.println("--- Nueva partida ---");
@@ -71,7 +71,7 @@ public class MenuConsola {
         jugar(partida);
     }
 
-    // pide un nombre hasta que sea valido (y distinto al del otro jugador)
+    // excepcion del nombre
     private String pedirNombre(String mensaje, String nombreOtro) {
         while (true) {
             System.out.print(mensaje);
@@ -116,7 +116,7 @@ public class MenuConsola {
         }
     }
 
-    // intenta hacer una jugada escrita como "e2 e4"
+    // movimiento "e2 e4"
     private void hacerJugada(Partida partida, String linea) {
         String[] partes = linea.split("\\s+");
         if (partes.length != 2) {
@@ -136,7 +136,7 @@ public class MenuConsola {
         }
     }
 
-    // muestra las casillas a las que puede ir la pieza
+    // casillas disponibles para la pieza
     private void verJugadas(Partida partida, String texto) {
         Posicion casilla = Posicion.desdeTexto(texto);
         if (casilla == null) {
@@ -178,7 +178,7 @@ public class MenuConsola {
         }
     }
 
-    // dibuja el tablero con letras: mayusculas = blancas, minusculas = negras
+    // Diferenciar blancas y NEGRAS
     private void dibujarTablero(Partida partida) {
         System.out.println();
         System.out.println("    a b c d e f g h");

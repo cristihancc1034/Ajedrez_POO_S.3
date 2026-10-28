@@ -1,6 +1,6 @@
 package modelo;
 
-// Una casilla del tablero. Fila 0 = fila 8 del ajedrez, columna 0 = columna "a"
+// Una casilla del tablero de ajedrez, columna 0 = columna "a"
 public class Posicion {
 
     private int fila;
@@ -23,12 +23,12 @@ public class Posicion {
         return fila >= 0 && fila < 8 && columna >= 0 && columna < 8;
     }
 
-    // devuelve la casilla que esta moviendose df filas y dc columnas
+    // devuelve las  casilla de dc filas y dc columnas
     public Posicion sumar(int df, int dc) {
         return new Posicion(fila + df, columna + dc);
     }
 
-    // convierte un texto como "e2" en una Posicion (si esta mal devuelve null)
+    // convierte un texto en una Posicion
     public static Posicion desdeTexto(String texto) {
         if (texto == null || texto.length() != 2) {
             return null;

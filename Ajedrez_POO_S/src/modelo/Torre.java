@@ -2,7 +2,7 @@ package modelo;
 
 import java.util.ArrayList;
 
-// La torre se mueve en linea recta.
+// Movimiento de las Torres
 public class Torre extends Pieza {
 
     public Torre(Color color) {

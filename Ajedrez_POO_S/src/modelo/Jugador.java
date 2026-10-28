@@ -1,6 +1,6 @@
 package modelo;
 
-// Persona que juega con uno de los dos bandos
+// Jugador ya sea de las fichas blancas o negras
 public class Jugador {
 
     private String nombre;
@@ -11,8 +11,7 @@ public class Jugador {
         this.color = color;
     }
 
-    // revisa que el nombre no este vacio y no pase de 20 letras
-    // devuelve el mensaje de error, o null si esta bien
+    // Verifica que el nombre no este en vacio y que no sobrepase las 20 letras
     public static String validarNombre(String nombre) {
         if (nombre == null || nombre.trim().isEmpty()) {
             return "El nombre no puede estar vacio.";

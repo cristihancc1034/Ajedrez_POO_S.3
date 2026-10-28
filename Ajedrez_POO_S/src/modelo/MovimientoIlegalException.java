@@ -1,6 +1,6 @@
 package modelo;
 
-// Se lanza cuando el jugador intenta una jugada que no se puede hacer
+// Se ejecuta cuando cualquier jugador comete un movimiento invalido
 public class MovimientoIlegalException extends Exception {
 
     public MovimientoIlegalException(String mensaje) {

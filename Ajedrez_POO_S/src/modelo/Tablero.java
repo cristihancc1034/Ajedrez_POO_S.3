@@ -1,11 +1,11 @@
 package modelo;
 
-// Tablero de 8x8. Guarda que pieza hay en cada casilla (null = casilla vacia)
+// Tablero de 8x8. Guarda que pieza  en cada casilla
 public class Tablero {
 
     private Pieza[][] casillas = new Pieza[8][8];
 
-    // crea un tablero con las piezas en su posicion inicial
+    //  tablero con las piezas en su posicion inicial
     public static Tablero inicial() {
         Tablero t = new Tablero();
         Color[] colores = {Color.BLANCO, Color.NEGRO};
