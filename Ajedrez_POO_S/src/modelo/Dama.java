@@ -2,7 +2,7 @@ package modelo;
 
 import java.util.ArrayList;
 
-// La dama junta los movimientos de la torre y el alfil
+// Movimientos de la Dama
 public class Dama extends Pieza {
 
     public Dama(Color color) {

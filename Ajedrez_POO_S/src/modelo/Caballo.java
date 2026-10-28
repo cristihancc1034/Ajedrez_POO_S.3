@@ -2,7 +2,7 @@ package modelo;
 
 import java.util.ArrayList;
 
-// El caballo se mueve en L
+// Movimientos del caballo
 public class Caballo extends Pieza {
 
     public Caballo(Color color) {

@@ -2,7 +2,7 @@ package modelo;
 
 import java.util.ArrayList;
 
-// El alfil se mueve en diagonal
+// Movimientos del Alfil
 public class Alfil extends Pieza {
 
     public Alfil(Color color) {

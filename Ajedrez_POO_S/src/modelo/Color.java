@@ -1,6 +1,6 @@
 package modelo;
 
-// Los dos bandos del juego
+// Los dos equipos del juego
 public enum Color {
     BLANCO, NEGRO;
 
@@ -12,7 +12,7 @@ public enum Color {
         return BLANCO;
     }
 
-    // las blancas suben (fila baja) y las negras bajan (fila sube)
+    // Posicion de las piezas (blancas y negras)
     public int direccionPeon() {
         if (this == BLANCO) {
             return -1;
