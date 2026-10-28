@@ -2,7 +2,7 @@ package modelo;
 
 import java.util.ArrayList;
 
-// Una partida: tiene el tablero, los jugadores, el turno y el historial de jugadas.
+// Aqui se encontrara el tablero, los jugadores, los turnos y el historial de cada jugada
 public class Partida {
 
     private Jugador blancas;
@@ -58,7 +58,7 @@ public class Partida {
         return negras;
     }
 
-    // jugadas posibles de la pieza seleccionada
+    // Muestra los movimientos posibles de la pieza seleccionada
 
     public ArrayList<Posicion> jugadasDe(Posicion desde) {
         Pieza pieza = tablero.get(desde);
@@ -68,7 +68,7 @@ public class Partida {
         return pieza.movimientos(tablero, desde);
     }
 
-    //  lanza una excepcion si la jugada es invalida
+    //  Muestra una excepcion si el movimiento es invalido
     public void mover(Posicion desde, Posicion hasta) throws MovimientoIlegalException {
         if (terminada) {
             throw new MovimientoIlegalException("La partida ya termino.");
@@ -94,7 +94,7 @@ public class Partida {
             historial.add(desde + "x" + hasta);
         }
 
-        // el   jugador que captura al rey  gana la partida
+        // El jugador que captura al rey, gana la partida
         if (capturada instanceof Rey) {
             terminada = true;
             ganador = getJugadorEnTurno();

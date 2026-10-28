@@ -24,18 +24,18 @@ public class Peon extends Pieza {
         ArrayList<Posicion> lista = new ArrayList<>();
         int dir = getColor().direccionPeon();
 
-        // avanzar una casilla ; Restringir si hay una pieza adelante
+        // Avanzar una casilla ; Restringir si hay una pieza adelante
         Posicion uno = desde.sumar(dir, 0);
         if (uno.esValida() && tablero.get(uno) == null) {
             lista.add(uno);
-            // desde su fila inicial puede avanzar dos
+            // Desde su fila inicial puede avanzar dos casillas
             Posicion dos = desde.sumar(2 * dir, 0);
             if (desde.getFila() == getColor().filaInicialPeones() && tablero.get(dos) == null) {
                 lista.add(dos);
             }
         }
 
-        // capturar en diagonal
+        // Captura en diagonal
         ArrayList<Posicion> diagonales = diagonales(desde);
         for (int i = 0; i < diagonales.size(); i++) {
             Pieza objetivo = tablero.get(diagonales.get(i));
@@ -46,7 +46,7 @@ public class Peon extends Pieza {
         return lista;
     }
 
-    // las dos casillas donde  el peon puede capturar
+    // Las dos casillas donde el peon puede capturar
     private ArrayList<Posicion> diagonales(Posicion desde) {
         ArrayList<Posicion> lista = new ArrayList<>();
         int dir = getColor().direccionPeon();
